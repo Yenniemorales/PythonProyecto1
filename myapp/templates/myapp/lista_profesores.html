@@ -1,0 +1,19 @@
+{% extends "myapp/index.html" %}
+{% load static %}
+
+<title>
+    {% block titulo %}Lista de Profesores{% endblock %}
+</title>
+
+
+{% block cuerpo %}
+    <h1>Lista de Profesores</h1>
+    <ul>
+        {% for profesor in profesores %}   
+            <li>{{profesor.nombre}} {{profesor.apellido}}</li>
+            <li>{{profesor.correo}}{{profesor.profesion}}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'cargar_profesor' %}" class="btn btn-success">Agregar Profesor</a>
+    <a href="{% url 'index'  %}" class="btn btn-danger">Inicio </a>
+{% endblock %}

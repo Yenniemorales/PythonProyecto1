@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+</head>
+<body>
+    <h1>Principal - AppCoder</h1>
+    <p>Seleccionar un link para hacer algo.</p>
+    <ul>
+        <li><a href="{% url 'cargar_estudiante' %}">Cargar Estudiante</a></li>
+        <li><a href="{% url 'lista_estudiantes' %}">Listar Estudiantes</a></li>
+        <li><a href="{% url 'cargar_profesor' %}">Cargar Profesor</a></li>
+        <li><a href="{% url 'lista_profesores' %}">Listar Profesores</a></li>
+    </ul>
+</body>
+</html>
