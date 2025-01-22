@@ -2,7 +2,9 @@ from django.shortcuts import render, redirect
 from .forms import EstudianteForm, ProfesorForm  # Importar formulario desde forms.py
 from .models import Estudiante, Profesor  # Importar modelo desde models.py
 from django.db.models import Q
+from django.contrib.auth.decorators import login_required
 #==================================INDEX====================================================
+@login_required
 def index(request):
     return render(request, 'myapp/index.html')
 
@@ -25,6 +27,8 @@ def lista_estudiantes(request):
     return render(request, 'myapp/lista_estudiantes.html', {'estudiantes': estudiantes})
 
 #==================================PROFESOR====================================================
+
+@login_required
 def cargar_profesor(request):
     if request.method == 'POST':
         form = ProfesorForm(request.POST)
